@@ -1,6 +1,6 @@
 import React from "react";
 
-const Product = () => {
+const Product = (data) => {
   // TODO: Remove below const and instead import them from chakra
   const Text = () => <div />;
   const Image = () => <div />;
@@ -9,16 +9,23 @@ const Product = () => {
   const Heading = () => <div />;
   const Tag = () => <div />;
   const TagLabel = () => <div />;
+  console.log("Hello");
+  console.log(data);
   return (
-    <Stack data-cy="product">
-      <Image data-cy="product-image" />
-      <Text data-cy="product-category"></Text>
-      <Tag>
-        <TagLabel data-cy="product-gender"></TagLabel>
-      </Tag>
-      <Heading data-cy="product-title"></Heading>
-      <Box data-cy="product-price"></Box>
-    </Stack>
+    <>
+      <h1>Hello</h1>
+      {data.products.map((e) => (
+        <Stack data-cy="product">
+          <Image data-cy="product-image" />
+          <Text data-cy="product-category"></Text>
+          <Tag>
+            <TagLabel data-cy="product-gender"></TagLabel>
+          </Tag>
+          <Heading data-cy="product-title"></Heading>
+          <Box data-cy="product-price"></Box>
+        </Stack>
+      ))}
+    </>
   );
 };
 
